@@ -49,6 +49,7 @@ namespace tugaspbkk
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button20 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -250,11 +251,22 @@ namespace tugaspbkk
             this.textBox1.TabIndex = 21;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(281, 521);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(52, 47);
+            this.button20.TabIndex = 22;
+            this.button20.Text = ".";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 647);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -305,6 +317,7 @@ namespace tugaspbkk
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button20;
     }
 }
 

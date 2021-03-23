@@ -29,6 +29,7 @@ namespace tugaspbkk
         private void button15_Click(object sender, EventArgs e)
         {
             secondNumber = float.Parse(textBox1.Text);
+            if (secondNumber == 0) secondNumber = firstNumber;
             calculations();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -41,55 +42,55 @@ namespace tugaspbkk
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button2.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button3.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button4.Text;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button5.Text;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button6.Text;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button7.Text;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button8.Text;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+           if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button9.Text;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || (firstNumber != 0 && !String.IsNullOrEmpty(operators))) textBox1.Text = String.Empty;
+            if (textBox1.Text == "0" ) textBox1.Text = String.Empty;
             textBox1.Text = textBox1.Text + button10.Text;
         }
        
@@ -157,8 +158,19 @@ namespace tugaspbkk
             textBox1.Text = Convert.ToString(0);
         }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + button20.Text;
+        }
+
         private void calculations()
         {
+            if (textBox1.Text.EndsWith("."))
+            {
+                Debug.WriteLine(textBox1.Text);
+                textBox1.Text = textBox1.Text.TrimEnd('.');
+                Debug.WriteLine(textBox1.Text);
+            }
             secondNumber = float.Parse(textBox1.Text);
             Debug.WriteLine("DEBUG: FIRST {0}, SECOND {1}, OPERATOR {2}", firstNumber, secondNumber, operators);
             switch (operators)
@@ -194,6 +206,8 @@ namespace tugaspbkk
                     secondNumber = 0;
                     break;
             }
+
+            Debug.WriteLine("DEBUG: FIRST {0}, SECOND {1}, OPERATOR {2}", firstNumber, secondNumber, operators);
         }
     }
 }
